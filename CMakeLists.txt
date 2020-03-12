@@ -3,4 +3,8 @@ project(zenithwm)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(zenithwm main.cpp)
+find_package(X11 REQUIRED)
+link_libraries(${X11_LIBRARIES})
+include_directories(${X11_INCLUDE_DIR})
+
+add_executable(zenithwm src/main.cpp)
